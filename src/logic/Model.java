@@ -1,7 +1,5 @@
 package logic;
 
-import java.lang.Math; 
-
 public class Model {
 
 	public Double calculate(Double num1, Double num2, String oper) {

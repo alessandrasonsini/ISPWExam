@@ -14,7 +14,7 @@ public class Controller {
     private Double num1 = 0.0;
     private String oper = "";
     private boolean start = true;
-    private static String ERROR = "MATH ERROR";
+    private final static String ERROR = "MATH ERROR";
 
     @FXML
     private void num(ActionEvent event) {
@@ -24,20 +24,22 @@ public class Controller {
         }
 
         String input = ((Button)event.getSource()).getText();
-        if (input.equals("."))
+        if (input.equals(".")) {
         	if (display.getText().equals("")) {
         		display.setText("0" + input);
         	}
         	else {
         		display.setText(display.getText() + input);
         	}
+        }
         else if (input.equals("DEL")) {
         	display.setText("");
         	num1 = 0.0;
         	oper = "";
         }
-        else
+        else {
         	display.setText(display.getText() + input);
+        }
     }
 
     @FXML
