@@ -1,0 +1,12 @@
+language: java
+jdk:
+  - openjdk11
+
+addons:
+  sonarcloud:
+    organization: alessandrasonsini
+    token: 4c5bd422427f413cc62f0b36f61291785f6d9a7b
+
+script:
+- mvn -X clean install
+- sonar-scanner
