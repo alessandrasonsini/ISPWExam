@@ -5,7 +5,7 @@ jdk:
 addons:
   sonarcloud:
     organization: alessandrasonsini
-    token: 4c5bd422427f413cc62f0b36f61291785f6d9a7b
+    token: f0d4ed4292c39193aa5d75cac84793f57f5cd905
 
 script:
 - mvn -X clean install
