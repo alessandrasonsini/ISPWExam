@@ -25,10 +25,12 @@ public class Controller {
 
         String input = ((Button)event.getSource()).getText();
         if (input.equals("."))
-        	if (display.getText().equals(""))
+        	if (display.getText().equals("")) {
         		display.setText("0" + input);
-        	else 
+        	}
+        	else {
         		display.setText(display.getText() + input);
+        	}
         else if (input.equals("DEL")) {
         	display.setText("");
         	num1 = 0.0;
@@ -56,7 +58,7 @@ public class Controller {
                 return;
 
             result = String.valueOf(model.calculate(num1, Double.parseDouble(display.getText()), oper));
-            if (result == "null")
+            if (result.equals("null"))
             	display.setText("MATH ERROR");
             else {
             	display.setText(result);
@@ -79,7 +81,7 @@ public class Controller {
     	String result = "";
     	
     	result = String.valueOf(model.sqrt(Double.parseDouble(input)));
-    	if (result == "NaN")
+    	if (result.equals("NaN"))
     		display.setText(ERROR);
     	else
     		display.setText(result);
@@ -91,7 +93,7 @@ public class Controller {
     	String result = "";
     	
     	result = String.valueOf(model.log(Double.parseDouble(input)));
-    	if (result == "NaN")
+    	if (result.equals("NaN"))
     		display.setText(ERROR);
     	else
     		display.setText(result);
