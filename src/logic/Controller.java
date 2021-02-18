@@ -14,6 +14,7 @@ public class Controller {
     private Double num1 = 0.0;
     private String oper = "";
     private boolean start = true;
+    private static String ERROR = "MATH ERROR";
 
     @FXML
     private void num(ActionEvent event) {
@@ -70,5 +71,29 @@ public class Controller {
     	String input = display.getText();
     	
     	display.setText(String.valueOf(model.switchSign(Double.parseDouble(input))));
+    }
+    
+    @FXML
+    private void sqrt() {
+    	String input = display.getText();
+    	String result = "";
+    	
+    	result = String.valueOf(model.sqrt(Double.parseDouble(input)));
+    	if (result == "NaN")
+    		display.setText(ERROR);
+    	else
+    		display.setText(result);
+    }
+    
+    @FXML
+    private void log() {
+    	String input = display.getText();
+    	String result = "";
+    	
+    	result = String.valueOf(model.log(Double.parseDouble(input)));
+    	if (result == "NaN")
+    		display.setText(ERROR);
+    	else
+    		display.setText(result);
     }
 }
